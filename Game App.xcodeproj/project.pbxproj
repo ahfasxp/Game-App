@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38402A12298F6BD400E3FD0D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38402A11298F6BD400E3FD0D /* ImageDownloader.swift */; };
+		38402A14298F6C0600E3FD0D /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38402A13298F6C0600E3FD0D /* GameModel.swift */; };
+		38402A16298F723500E3FD0D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38402A15298F723500E3FD0D /* NetworkService.swift */; };
 		38C7FBB3298F3F1F003436E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB2298F3F1F003436E1 /* AppDelegate.swift */; };
 		38C7FBB5298F3F1F003436E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB4298F3F1F003436E1 /* SceneDelegate.swift */; };
 		38C7FBB7298F3F1F003436E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB6298F3F1F003436E1 /* ViewController.swift */; };
 		38C7FBBA298F3F1F003436E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FBB8298F3F1F003436E1 /* Main.storyboard */; };
 		38C7FBBC298F3F21003436E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FBBB298F3F21003436E1 /* Assets.xcassets */; };
 		38C7FBBF298F3F21003436E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FBBD298F3F21003436E1 /* LaunchScreen.storyboard */; };
+		38C7FBC7298F41FE003436E1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBC6298F41FE003436E1 /* AboutViewController.swift */; };
+		38C7FBCD298F49B8003436E1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */; };
+		38C7FBCE298F49B8003436E1 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */; };
+		38C7FBD0298F52C7003436E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBCF298F52C7003436E1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38402A11298F6BD400E3FD0D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		38402A13298F6C0600E3FD0D /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		38402A15298F723500E3FD0D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		38C7FBAF298F3F1F003436E1 /* Game App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C7FBB2298F3F1F003436E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C7FBB4298F3F1F003436E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,10 @@
 		38C7FBBB298F3F21003436E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38C7FBBE298F3F21003436E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38C7FBC0298F3F21003436E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C7FBC6298F41FE003436E1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
+		38C7FBCF298F52C7003436E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38402A10298F6BA900E3FD0D /* NetworkSource */ = {
+			isa = PBXGroup;
+			children = (
+				38402A11298F6BD400E3FD0D /* ImageDownloader.swift */,
+				38402A13298F6C0600E3FD0D /* GameModel.swift */,
+				38402A15298F723500E3FD0D /* NetworkService.swift */,
+			);
+			path = NetworkSource;
+			sourceTree = "<group>";
+		};
 		38C7FBA6298F3F1F003436E1 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +80,44 @@
 		38C7FBB1298F3F1F003436E1 /* Game App */ = {
 			isa = PBXGroup;
 			children = (
+				38402A10298F6BA900E3FD0D /* NetworkSource */,
+				38C7FBC8298F46FA003436E1 /* App */,
+				38C7FBC9298F4721003436E1 /* FileSystem */,
+				38C7FBCA298F4742003436E1 /* View */,
+			);
+			path = "Game App";
+			sourceTree = "<group>";
+		};
+		38C7FBC8298F46FA003436E1 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				38C7FBB2298F3F1F003436E1 /* AppDelegate.swift */,
 				38C7FBB4298F3F1F003436E1 /* SceneDelegate.swift */,
-				38C7FBB6298F3F1F003436E1 /* ViewController.swift */,
-				38C7FBB8298F3F1F003436E1 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		38C7FBC9298F4721003436E1 /* FileSystem */ = {
+			isa = PBXGroup;
+			children = (
 				38C7FBBB298F3F21003436E1 /* Assets.xcassets */,
 				38C7FBBD298F3F21003436E1 /* LaunchScreen.storyboard */,
 				38C7FBC0298F3F21003436E1 /* Info.plist */,
 			);
-			path = "Game App";
+			path = FileSystem;
+			sourceTree = "<group>";
+		};
+		38C7FBCA298F4742003436E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38C7FBB6298F3F1F003436E1 /* ViewController.swift */,
+				38C7FBB8298F3F1F003436E1 /* Main.storyboard */,
+				38C7FBC6298F41FE003436E1 /* AboutViewController.swift */,
+				38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */,
+				38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */,
+				38C7FBCF298F52C7003436E1 /* DetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +181,7 @@
 				38C7FBBF298F3F21003436E1 /* LaunchScreen.storyboard in Resources */,
 				38C7FBBC298F3F21003436E1 /* Assets.xcassets in Resources */,
 				38C7FBBA298F3F1F003436E1 /* Main.storyboard in Resources */,
+				38C7FBCE298F49B8003436E1 /* GameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C7FBCD298F49B8003436E1 /* GameTableViewCell.swift in Sources */,
 				38C7FBB7298F3F1F003436E1 /* ViewController.swift in Sources */,
+				38402A12298F6BD400E3FD0D /* ImageDownloader.swift in Sources */,
 				38C7FBB3298F3F1F003436E1 /* AppDelegate.swift in Sources */,
+				38402A16298F723500E3FD0D /* NetworkService.swift in Sources */,
+				38C7FBD0298F52C7003436E1 /* DetailViewController.swift in Sources */,
+				38402A14298F6C0600E3FD0D /* GameModel.swift in Sources */,
+				38C7FBC7298F41FE003436E1 /* AboutViewController.swift in Sources */,
 				38C7FBB5298F3F1F003436E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +348,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Game App/Info.plist";
+				INFOPLIST_FILE = "Game App/FileSystem/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Game App/Info.plist";
+				INFOPLIST_FILE = "Game App/FileSystem/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
