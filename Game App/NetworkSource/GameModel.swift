@@ -13,6 +13,7 @@ enum DownloadState {
 }
 
 class Game{
+    let id: Int
     let name: String
     let released: Date
     let rating: Double
@@ -21,7 +22,8 @@ class Game{
     var image: UIImage?
     var state: DownloadState = .new
     
-    init(name: String, released: Date, rating: Double, backgroundImage: URL) {
+    init(id: Int, name: String, released: Date, rating: Double, backgroundImage: URL) {
+        self.id = id
         self.name = name
         self.released = released
         self.rating = rating
@@ -37,13 +39,14 @@ struct GameResponses: Codable{
 }
 
 struct GameResponse: Codable{
+    let id: Int?
     let name: String?
     let released: Date
     let rating: Double?
     let backgroundImage: URL
     
     enum CodingKeys: String, CodingKey {
-        case name, released, rating
+        case id, name, released, rating
         case backgroundImage = "background_image"
     }
     
@@ -60,6 +63,7 @@ struct GameResponse: Codable{
         dateFormatter.dateFormat = "yyyy-MM-dd"
         released = dateFormatter.date(from: dateString)!
         
+        id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         rating = try container.decode(Double.self, forKey: .rating)
     }
