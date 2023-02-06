@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var gameTableView: UITableView!
+    @IBOutlet var gameTableView: UITableView!
     
     private var games: [Game] = []
     
@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         gameTableView.dataSource = self
+        gameTableView.delegate = self
         
         gameTableView.register(
             UINib(nibName: "GameTableViewCell", bundle: nil),
@@ -26,23 +27,23 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Task{
+        Task {
             await getGames()
         }
     }
     
     func getGames() async {
         let networkService = NetworkService()
-        do{
+        do {
             games = try await networkService.getGames()
             gameTableView.reloadData()
-        }catch{
+        } catch {
             fatalError("Error: Connection Failed.")
         }
     }
 }
 
-extension ViewController: UITableViewDataSource{
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }
@@ -52,7 +53,6 @@ extension ViewController: UITableViewDataSource{
             withIdentifier: "gameTableViewCell",
             for: indexPath
         ) as? GameTableViewCell {
-            
             let game = games[indexPath.row]
             
             let dateFormatter = DateFormatter()
@@ -63,11 +63,11 @@ extension ViewController: UITableViewDataSource{
             cell.gameDate.text = dateFormatter.string(from: game.released)
             cell.gameRating.text = String(game.rating)
             
-            if game.state == .new{
+            if game.state == .new {
                 cell.loadingIndicator.isHidden = false
                 cell.loadingIndicator.startAnimating()
                 startDownload(game: game, indexPath: indexPath)
-            }else{
+            } else {
                 cell.loadingIndicator.stopAnimating()
                 cell.loadingIndicator.isHidden = true
             }
@@ -78,16 +78,16 @@ extension ViewController: UITableViewDataSource{
         }
     }
     
-    fileprivate func startDownload(game: Game, indexPath: IndexPath){
+    fileprivate func startDownload(game: Game, indexPath: IndexPath) {
         let imageDownloader = ImageDownloader()
-        if game.state == .new{
-            Task{
-                do{
+        if game.state == .new {
+            Task {
+                do {
                     let image = try await imageDownloader.downloadImage(url: game.backgroundImage)
                     game.state = .downloaded
                     game.image = image
                     self.gameTableView.reloadRows(at: [indexPath], with: .automatic)
-                }catch{
+                } catch {
                     game.state = .failed
                     game.image = nil
                 }
@@ -96,3 +96,23 @@ extension ViewController: UITableViewDataSource{
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let game = games[indexPath.row]
+        performSegue(withIdentifier: "moveToDetail", sender: game)
+    }
+
+    override func prepare(
+        for segue: UIStoryboardSegue,
+        sender: Any?
+    ) {
+        if segue.identifier == "moveToDetail" {
+            if let detaiViewController = segue.destination as? DetailViewController {
+                detaiViewController.game = sender as? Game
+            }
+        }
+    }
+}
