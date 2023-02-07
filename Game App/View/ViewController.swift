@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var gameTableView: UITableView!
     
-    private var games: [Game] = []
+    private var games: [GameModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,7 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
-    fileprivate func startDownload(game: Game, indexPath: IndexPath) {
+    fileprivate func startDownload(game: GameModel, indexPath: IndexPath) {
         let imageDownloader = ImageDownloader()
         if game.state == .new {
             Task {
@@ -111,7 +111,7 @@ extension ViewController: UITableViewDelegate {
     ) {
         if segue.identifier == "moveToDetail" {
             if let detaiViewController = segue.destination as? DetailViewController {
-                detaiViewController.game = sender as? Game
+                detaiViewController.game = sender as? GameModel
             }
         }
     }

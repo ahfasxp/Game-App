@@ -12,7 +12,7 @@ class NetworkService {
     let page = 1
     let pageSize = 10
     
-    func getGames() async throws -> [Game] {
+    func getGames() async throws -> [GameModel] {
         var components = URLComponents(string: "\(baseUrl)/games")!
         components.queryItems = [
             URLQueryItem(name: "key", value: apiKey),
@@ -58,9 +58,9 @@ class NetworkService {
 }
 
 private extension NetworkService {
-    func gameMapper(input gameResponse: [GameResponse]) -> [Game] {
+    func gameMapper(input gameResponse: [GameResponse]) -> [GameModel] {
         return gameResponse.map { result in
-            Game(id: result.id ?? 0, name: result.name ?? "", released: result.released, rating: result.rating ?? 0.0, backgroundImage: result.backgroundImage)
+            GameModel(id: result.id ?? 0, name: result.name ?? "", released: result.released, rating: result.rating ?? 0.0, backgroundImage: result.backgroundImage)
         }
     }
     

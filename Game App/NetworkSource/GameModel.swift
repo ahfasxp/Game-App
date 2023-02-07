@@ -12,7 +12,7 @@ enum DownloadState {
     case new, downloaded, failed
 }
 
-class Game{
+class GameModel {
     let id: Int
     let name: String
     let released: Date
@@ -31,14 +31,14 @@ class Game{
     }
 }
 
-struct GameResponses: Codable{
+struct GameResponses: Codable {
     let count: Int
     let next: String?
     let previous: String?
     let results: [GameResponse]?
 }
 
-struct GameResponse: Codable{
+struct GameResponse: Codable {
     let id: Int?
     let name: String?
     let released: Date
