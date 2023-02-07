@@ -8,15 +8,15 @@
 import UIKit
 
 class GameTableViewCell: UITableViewCell {
-    @IBOutlet weak var gameName: UILabel!
-    @IBOutlet weak var gameDate: UILabel!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var gameRating: UILabel!
-    @IBOutlet weak var gameImage: UIImageView!
-    
+    @IBOutlet var gameName: UILabel!
+    @IBOutlet var gameDate: UILabel!
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var gameRating: UILabel!
+    @IBOutlet var gameImage: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         gameImage.layer.cornerRadius = 8
     }
 
@@ -25,5 +25,4 @@ class GameTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

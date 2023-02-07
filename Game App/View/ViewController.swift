@@ -8,13 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var gameTableView: UITableView!
-    
+    private let refreshControl = UIRefreshControl()
     private var games: [GameModel] = []
+    
+    @IBOutlet var gameTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+        
+        Task {
+            await getGames()
+        }
+    }
+    
+    private func setupTableView() {
         gameTableView.dataSource = self
         gameTableView.delegate = self
         
@@ -22,17 +31,27 @@ class ViewController: UIViewController {
             UINib(nibName: "GameTableViewCell", bundle: nil),
             forCellReuseIdentifier: "gameTableViewCell"
         )
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            gameTableView.refreshControl = refreshControl
+        } else {
+            gameTableView.addSubview(refreshControl)
+        }
+        
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshGameData(_:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Game Data ...")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    @objc private func refreshGameData(_ sender: Any) {
         Task {
             await getGames()
+            refreshControl.endRefreshing()
         }
     }
     
-    func getGames() async {
+    private func getGames() async {
         let networkService = NetworkService()
         do {
             games = try await networkService.getGames()
@@ -71,6 +90,11 @@ extension ViewController: UITableViewDataSource {
                 cell.loadingIndicator.stopAnimating()
                 cell.loadingIndicator.isHidden = true
             }
+            
+            // Cell selected color
+            let bgColorView = UIView()
+            bgColorView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = bgColorView
             
             return cell
         } else {
