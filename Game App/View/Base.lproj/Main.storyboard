@@ -132,9 +132,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-Qo-7WS">
-                                                <rect key="frame" x="162" y="264" width="20" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-Qo-7WS">
+                                                <rect key="frame" x="150" y="252" width="20" height="20"/>
                                             </activityIndicatorView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-NW-ztu">
                                                 <rect key="frame" x="16" y="298" width="288" height="18"/>
@@ -346,8 +345,10 @@
                         <viewLayoutGuide key="safeArea" id="1Ck-fq-rX6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="AQ7-Qo-7WS" firstAttribute="centerX" secondItem="1Ck-fq-rX6" secondAttribute="centerX" id="1ME-pu-vps"/>
                             <constraint firstItem="Xky-yB-poY" firstAttribute="leading" secondItem="OfR-IR-IIN" secondAttribute="leading" id="GF6-ap-98Y"/>
                             <constraint firstItem="Xky-yB-poY" firstAttribute="top" secondItem="OfR-IR-IIN" secondAttribute="top" id="YSB-ls-3Ka"/>
+                            <constraint firstItem="AQ7-Qo-7WS" firstAttribute="centerY" secondItem="1Ck-fq-rX6" secondAttribute="centerY" id="cTX-Hb-B28"/>
                             <constraint firstAttribute="bottom" secondItem="Xky-yB-poY" secondAttribute="bottom" id="lUd-SD-TA7"/>
                             <constraint firstAttribute="trailing" secondItem="Xky-yB-poY" secondAttribute="trailing" id="miY-OF-Xe8"/>
                         </constraints>
