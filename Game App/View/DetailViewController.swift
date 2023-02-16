@@ -10,7 +10,9 @@ import UIKit
 class DetailViewController: UIViewController {
     var game: GameModel?
 
+    private lazy var gameProvider: GameProvider = .init()
     private var gameDetail: GameDetailModel?
+    private var isFavorite: Bool = false
 
     @IBOutlet var detailView: UIStackView!
     @IBOutlet var aboutView: UIStackView!
@@ -27,16 +29,19 @@ class DetailViewController: UIViewController {
     @IBOutlet var gameAbout: UILabel!
     @IBOutlet var gameRating: UILabel!
     @IBOutlet var gameRatingCount: UILabel!
+    @IBOutlet var favoriteView: UIView!
+    @IBOutlet var favoriteImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
         if let result = game {
             showLoading(value: true)
+            gameProvider.getGame(result.id) { _ in
+                DispatchQueue.main.async {
+                    self.isFavorite = true
+                }
+            }
             Task {
                 await getDetailGame(id: result.id)
                 reloadView()
@@ -53,6 +58,7 @@ class DetailViewController: UIViewController {
         gameRatingTop.isHidden = value
         aboutView.isHidden = value
         detailView.isHidden = value
+        favoriteView.isHidden = value
 
         loadingIndicator.isHidden = !value
         (value) ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
@@ -62,6 +68,7 @@ class DetailViewController: UIViewController {
         if let result = gameDetail {
             gameImage.image = game?.image
             gameImage.layer.cornerRadius = 8
+            favoriteView.layer.cornerRadius = favoriteView.frame.height / 2
 
             gameName.text = result.name
             gameRatingCount.text = "\(String(result.ratingsCount!)) Rating"
@@ -93,6 +100,40 @@ class DetailViewController: UIViewController {
             gamePublisher.text = publishers.joined(separator: ", ")
 
             gameWebsite.text = result.website
+
+            if isFavorite {
+                favoriteImage.image = UIImage(systemName: "heart.fill")
+            }
+
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+            favoriteImage.isUserInteractionEnabled = true
+            favoriteImage.addGestureRecognizer(tapGestureRecognizer)
+        }
+    }
+
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        if tapGestureRecognizer.view is UIImageView {
+            if isFavorite {
+                if let result = game {
+                    gameProvider.deleteGame(result.id) {
+                        DispatchQueue.main.async {
+                            self.favoriteImage.image = UIImage(systemName: "heart")
+                            self.showToast(message: "Delete to favorite", font: .systemFont(ofSize: 12.0))
+                        }
+                    }
+                }
+            } else {
+                if let result = game {
+                    gameProvider.createGame(result.id, result.name, result.released, result.rating, result.backgroundImage) {
+                        DispatchQueue.main.async {
+                            self.favoriteImage.image = UIImage(systemName: "heart.fill")
+                            self.showToast(message: "Add to favorite", font: .systemFont(ofSize: 12.0))
+                        }
+                    }
+                }
+            }
+
+            isFavorite = !isFavorite
         }
     }
 
@@ -103,5 +144,23 @@ class DetailViewController: UIViewController {
         } catch {
             fatalError("Error: Connection Failed.")
         }
+    }
+
+    private func showToast(message: String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: view.frame.size.width / 2 - 75, y: view.frame.size.height - 150, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10
+        toastLabel.clipsToBounds = true
+        view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: { _ in
+            toastLabel.removeFromSuperview()
+        })
     }
 }
