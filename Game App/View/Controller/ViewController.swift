@@ -22,6 +22,10 @@ class ViewController: UIViewController {
             await getGames()
         }
     }
+
+    @IBAction func searchGame(_ sender: Any) {
+        Toast.showToast(message: "Coming soon", font: .systemFont(ofSize: 12.0), view: view)
+    }
     
     private func setupTableView() {
         gameTableView.dataSource = self

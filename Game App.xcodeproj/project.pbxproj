@@ -15,6 +15,7 @@
 		38749D3D299CE05200405CA6 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38749D3C299CE05200405CA6 /* FavoriteViewController.swift */; };
 		387EA74A298FD728003B3591 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EA749298FD728003B3591 /* GameDetailModel.swift */; };
 		387EA74C298FD9C6003B3591 /* GameDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EA74B298FD9C6003B3591 /* GameDetailResponse.swift */; };
+		38B10F08299E3FFB00EA2C8F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B10F07299E3FFB00EA2C8F /* Toast.swift */; };
 		38C7FBB3298F3F1F003436E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB2298F3F1F003436E1 /* AppDelegate.swift */; };
 		38C7FBB5298F3F1F003436E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB4298F3F1F003436E1 /* SceneDelegate.swift */; };
 		38C7FBB7298F3F1F003436E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBB6298F3F1F003436E1 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		38749D3C299CE05200405CA6 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		387EA749298FD728003B3591 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		387EA74B298FD9C6003B3591 /* GameDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailResponse.swift; sourceTree = "<group>"; };
+		38B10F07299E3FFB00EA2C8F /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		38C7FBAF298F3F1F003436E1 /* Game App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C7FBB2298F3F1F003436E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C7FBB4298F3F1F003436E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,17 @@
 			path = NetworkSource;
 			sourceTree = "<group>";
 		};
+		38B10F09299E415200EA2C8F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38C7FBB6298F3F1F003436E1 /* ViewController.swift */,
+				38C7FBC6298F41FE003436E1 /* AboutViewController.swift */,
+				38C7FBCF298F52C7003436E1 /* DetailViewController.swift */,
+				38749D3C299CE05200405CA6 /* FavoriteViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		38C7FBA6298F3F1F003436E1 = {
 			isa = PBXGroup;
 			children = (
@@ -144,15 +157,13 @@
 		38C7FBCA298F4742003436E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				38C7FBB6298F3F1F003436E1 /* ViewController.swift */,
+				38B10F09299E415200EA2C8F /* Controller */,
 				38C7FBB8298F3F1F003436E1 /* Main.storyboard */,
-				38C7FBC6298F41FE003436E1 /* AboutViewController.swift */,
 				38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */,
 				38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */,
-				38C7FBCF298F52C7003436E1 /* DetailViewController.swift */,
-				38749D3C299CE05200405CA6 /* FavoriteViewController.swift */,
 				38CD05F2299E2ADC0092FCB6 /* EmptyTableViewCell.swift */,
 				38CD05F3299E2ADC0092FCB6 /* EmptyTableViewCell.xib */,
+				38B10F07299E3FFB00EA2C8F /* Toast.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C7FBCD298F49B8003436E1 /* GameTableViewCell.swift in Sources */,
+				38B10F08299E3FFB00EA2C8F /* Toast.swift in Sources */,
 				38C7FBB7298F3F1F003436E1 /* ViewController.swift in Sources */,
 				38402A12298F6BD400E3FD0D /* ImageDownloader.swift in Sources */,
 				38C7FBB3298F3F1F003436E1 /* AppDelegate.swift in Sources */,

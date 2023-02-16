@@ -34,6 +34,9 @@
                     <navigationItem key="navigationItem" title="RAWG" id="gfR-VF-G25">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="8nQ-hd-1Q4">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="searchGame:" destination="BYZ-38-t0r" id="DKJ-n6-j7c"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -93,7 +96,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="HH8-C7-ysx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mce-pB-9L2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -473,7 +476,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="edL-Vn-rN6"/>
+        <segue reference="NFo-cS-JOP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

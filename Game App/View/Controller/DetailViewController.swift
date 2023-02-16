@@ -118,7 +118,7 @@ class DetailViewController: UIViewController {
                     gameProvider.deleteGame(result.id) {
                         DispatchQueue.main.async {
                             self.favoriteImage.image = UIImage(systemName: "heart")
-                            self.showToast(message: "Delete to favorite", font: .systemFont(ofSize: 12.0))
+                            Toast.showToast(message: "Delete to favorite", font: .systemFont(ofSize: 12.0), view: self.view)
                         }
                     }
                 }
@@ -127,7 +127,7 @@ class DetailViewController: UIViewController {
                     gameProvider.createGame(result.id, result.name, result.released, result.rating, result.backgroundImage) {
                         DispatchQueue.main.async {
                             self.favoriteImage.image = UIImage(systemName: "heart.fill")
-                            self.showToast(message: "Add to favorite", font: .systemFont(ofSize: 12.0))
+                            Toast.showToast(message: "Add to favorite", font: .systemFont(ofSize: 12.0), view: self.view)
                         }
                     }
                 }
@@ -144,23 +144,5 @@ class DetailViewController: UIViewController {
         } catch {
             fatalError("Error: Connection Failed.")
         }
-    }
-
-    private func showToast(message: String, font: UIFont) {
-        let toastLabel = UILabel(frame: CGRect(x: view.frame.size.width / 2 - 75, y: view.frame.size.height - 150, width: 150, height: 35))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        toastLabel.font = font
-        toastLabel.textAlignment = .center
-        toastLabel.text = message
-        toastLabel.alpha = 1.0
-        toastLabel.layer.cornerRadius = 10
-        toastLabel.clipsToBounds = true
-        view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
-            toastLabel.alpha = 0.0
-        }, completion: { _ in
-            toastLabel.removeFromSuperview()
-        })
     }
 }
