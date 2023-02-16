@@ -25,6 +25,8 @@
 		38C7FBCD298F49B8003436E1 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */; };
 		38C7FBCE298F49B8003436E1 /* GameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */; };
 		38C7FBD0298F52C7003436E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7FBCF298F52C7003436E1 /* DetailViewController.swift */; };
+		38CD05F4299E2ADC0092FCB6 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD05F2299E2ADC0092FCB6 /* EmptyTableViewCell.swift */; };
+		38CD05F5299E2ADC0092FCB6 /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38CD05F3299E2ADC0092FCB6 /* EmptyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		38C7FBCB298F49B8003436E1 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameTableViewCell.xib; sourceTree = "<group>"; };
 		38C7FBCF298F52C7003436E1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		38CD05F2299E2ADC0092FCB6 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		38CD05F3299E2ADC0092FCB6 /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 				38C7FBCC298F49B8003436E1 /* GameTableViewCell.xib */,
 				38C7FBCF298F52C7003436E1 /* DetailViewController.swift */,
 				38749D3C299CE05200405CA6 /* FavoriteViewController.swift */,
+				38CD05F2299E2ADC0092FCB6 /* EmptyTableViewCell.swift */,
+				38CD05F3299E2ADC0092FCB6 /* EmptyTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C7FBBF298F3F21003436E1 /* LaunchScreen.storyboard in Resources */,
+				38CD05F5299E2ADC0092FCB6 /* EmptyTableViewCell.xib in Resources */,
 				38C7FBBC298F3F21003436E1 /* Assets.xcassets in Resources */,
 				38C7FBBA298F3F1F003436E1 /* Main.storyboard in Resources */,
 				38C7FBCE298F49B8003436E1 /* GameTableViewCell.xib in Resources */,
@@ -231,6 +238,7 @@
 				38402A16298F723500E3FD0D /* NetworkService.swift in Sources */,
 				3800ACB3299DC44A007C9F8E /* GameProvider.swift in Sources */,
 				38C7FBD0298F52C7003436E1 /* DetailViewController.swift in Sources */,
+				38CD05F4299E2ADC0092FCB6 /* EmptyTableViewCell.swift in Sources */,
 				387EA74C298FD9C6003B3591 /* GameDetailResponse.swift in Sources */,
 				38402A14298F6C0600E3FD0D /* GameModel.swift in Sources */,
 				38C7FBC7298F41FE003436E1 /* AboutViewController.swift in Sources */,

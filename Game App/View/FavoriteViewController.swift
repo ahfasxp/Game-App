@@ -33,6 +33,11 @@ class FavoriteViewController: UIViewController {
             UINib(nibName: "GameTableViewCell", bundle: nil),
             forCellReuseIdentifier: "gameTableViewCell"
         )
+
+        favoriteTableView.register(
+            UINib(nibName: "EmptyTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "emptyTableViewCell"
+        )
     }
 
     private func loadGame() {
@@ -47,41 +52,52 @@ class FavoriteViewController: UIViewController {
 
 extension FavoriteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return games.count == 0 ? 1 : games.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: "gameTableViewCell",
-            for: indexPath
-        ) as? GameTableViewCell {
-            let game = games[indexPath.row]
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM, yyyy"
-
-            cell.gameImage.image = game.image
-            cell.gameName.text = game.name
-            cell.gameDate.text = dateFormatter.string(from: game.released)
-            cell.gameRating.text = String(game.rating)
-
-            if game.state == .new {
-                cell.loadingIndicator.isHidden = false
-                cell.loadingIndicator.startAnimating()
-                startDownload(game: game, indexPath: indexPath)
+        if games.count == 0 {
+            if let cell = tableView.dequeueReusableCell(
+                withIdentifier: "emptyTableViewCell",
+                for: indexPath
+            ) as? EmptyTableViewCell {
+                return cell
             } else {
-                cell.loadingIndicator.stopAnimating()
-                cell.loadingIndicator.isHidden = true
+                return UITableViewCell()
             }
-
-            // Cell selected color
-            let bgColorView = UIView()
-            bgColorView.backgroundColor = UIColor.white
-            cell.selectedBackgroundView = bgColorView
-
-            return cell
         } else {
-            return UITableViewCell()
+            if let cell = tableView.dequeueReusableCell(
+                withIdentifier: "gameTableViewCell",
+                for: indexPath
+            ) as? GameTableViewCell {
+                let game = games[indexPath.row]
+
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd MMM, yyyy"
+
+                cell.gameImage.image = game.image
+                cell.gameName.text = game.name
+                cell.gameDate.text = dateFormatter.string(from: game.released)
+                cell.gameRating.text = String(game.rating)
+
+                if game.state == .new {
+                    cell.loadingIndicator.isHidden = false
+                    cell.loadingIndicator.startAnimating()
+                    startDownload(game: game, indexPath: indexPath)
+                } else {
+                    cell.loadingIndicator.stopAnimating()
+                    cell.loadingIndicator.isHidden = true
+                }
+
+                // Cell selected color
+                let bgColorView = UIView()
+                bgColorView.backgroundColor = UIColor.white
+                cell.selectedBackgroundView = bgColorView
+
+                return cell
+            } else {
+                return UITableViewCell()
+            }
         }
     }
 
