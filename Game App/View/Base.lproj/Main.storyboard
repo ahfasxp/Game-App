@@ -56,27 +56,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEn-cy-VPH">
-                                <rect key="frame" x="85" y="24" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="2C7-3p-vNg"/>
-                                    <constraint firstAttribute="width" constant="150" id="XfW-BI-zok"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muchamad Ahfas Fazria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-YJ-glM">
-                                <rect key="frame" x="47.5" y="190" width="225" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fQb-yc-W03">
+                                <rect key="frame" x="47.5" y="100" width="225.5" height="190"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEn-cy-VPH">
+                                        <rect key="frame" x="37.5" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="2C7-3p-vNg"/>
+                                            <constraint firstAttribute="width" constant="150" id="XfW-BI-zok"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muchamad Ahfas Fazria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FW-YJ-glM">
+                                        <rect key="frame" x="0.0" y="166" width="225.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dwN-D0-3aX">
+                                <rect key="frame" x="16" y="322" width="288" height="66"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="DHy-DO-8th">
+                                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Nuy-P1-wQr"/>
+                                            <constraint firstAttribute="height" constant="50" id="QDC-Yw-81Q"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muchamad Ahfas Fazria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdz-PJ-d3e">
+                                        <rect key="frame" x="68" y="23" width="212" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iMb-c9-ADg">
+                                <rect key="frame" x="16" y="396" width="288" height="66"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="m2h-13-rPL">
+                                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6eX-bC-8xx"/>
+                                            <constraint firstAttribute="width" constant="50" id="cU3-wp-mWd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Muchamad Ahfas Fazria" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95d-HQ-HDo">
+                                        <rect key="frame" x="68" y="23" width="212" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V3J-kF-8LW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BEn-cy-VPH" firstAttribute="centerX" secondItem="V3J-kF-8LW" secondAttribute="centerX" id="7xR-p7-Ujo"/>
-                            <constraint firstItem="BEn-cy-VPH" firstAttribute="top" secondItem="V3J-kF-8LW" secondAttribute="top" constant="24" id="EDL-a8-HoV"/>
-                            <constraint firstItem="4FW-YJ-glM" firstAttribute="centerX" secondItem="V3J-kF-8LW" secondAttribute="centerX" id="abJ-xw-BLH"/>
-                            <constraint firstItem="4FW-YJ-glM" firstAttribute="top" secondItem="BEn-cy-VPH" secondAttribute="bottom" constant="16" id="xFN-mq-TgG"/>
+                            <constraint firstItem="dwN-D0-3aX" firstAttribute="top" secondItem="fQb-yc-W03" secondAttribute="bottom" constant="32" id="0Pe-iu-8fF"/>
+                            <constraint firstItem="V3J-kF-8LW" firstAttribute="trailing" secondItem="iMb-c9-ADg" secondAttribute="trailing" constant="16" id="4k8-Pp-N2m"/>
+                            <constraint firstItem="fQb-yc-W03" firstAttribute="centerX" secondItem="V3J-kF-8LW" secondAttribute="centerX" id="DMS-oJ-epB"/>
+                            <constraint firstItem="V3J-kF-8LW" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iMb-c9-ADg" secondAttribute="bottom" constant="16" id="Ehc-sj-JaI"/>
+                            <constraint firstItem="fQb-yc-W03" firstAttribute="top" secondItem="V3J-kF-8LW" secondAttribute="top" constant="100" id="WvK-5g-27i"/>
+                            <constraint firstItem="iMb-c9-ADg" firstAttribute="leading" secondItem="V3J-kF-8LW" secondAttribute="leading" constant="16" id="Y08-Zc-bBK"/>
+                            <constraint firstItem="dwN-D0-3aX" firstAttribute="leading" secondItem="V3J-kF-8LW" secondAttribute="leading" constant="16" id="dgD-vX-K3h"/>
+                            <constraint firstItem="V3J-kF-8LW" firstAttribute="trailing" secondItem="dwN-D0-3aX" secondAttribute="trailing" constant="16" id="mON-kO-w0H"/>
+                            <constraint firstItem="iMb-c9-ADg" firstAttribute="top" secondItem="dwN-D0-3aX" secondAttribute="bottom" constant="8" symbolic="YES" id="u8U-PP-uQ4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="person.crop.square" catalog="system" id="Bc6-aI-QJf"/>
@@ -96,7 +146,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="HH8-C7-ysx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mce-pB-9L2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -167,7 +217,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="AQ7-Qo-7WS">
-                                                <rect key="frame" x="150" y="227.5" width="20" height="20"/>
+                                                <rect key="frame" x="150" y="221.5" width="20" height="20"/>
                                             </activityIndicatorView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cDp-NW-ztu">
                                                 <rect key="frame" x="16" y="298" width="288" height="18"/>
@@ -462,7 +512,7 @@
                     <tabBarItem key="tabBarItem" title="Favorite" image="heart.square" catalog="system" id="DOJ-XG-BRV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Se4-0m-xHM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -480,9 +530,11 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="github" width="170.5" height="170.5"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="heart.square" catalog="system" width="128" height="114"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="linkedin" width="170.5" height="170.5"/>
         <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
